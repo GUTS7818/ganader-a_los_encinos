@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact img {
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+        .contact:hover img {
+            transform: rotate(360deg);
+        }
+        .contact p {
+            transition: color 0.3s;
+        }
+        .contact:hover p {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="menu_principal.html">Menu Principal</a></li>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conozcamos.html">Conócenos</a></li>
+            <li><a href="producto.html">Servicios</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio" class="section">
+        <h1>Bienvenidos a Nuestra Empresa</h1>
+        <p>Somos una empresa dedicada a [descripción breve de la empresa].</p>
+    </section>
+
+    <section id="conocenos" class="section">
+        <h1>Sobre Nosotros</h1>
+        <p>Nuestra empresa se especializa en [detalle de a qué se dedica la empresa].</p>
+        <p>Ubicados en [ubicación de la empresa].</p>
+    </section>
+
+    <section id="servicios" class="section">
+        <h1>Servicios y Productos</h1>
+        <p>Ofrecemos una variedad de servicios y productos, incluyendo:</p>
+        <ul>
+            <li>Servicio/Producto 1</li>
+            <li>Servicio/Producto 2</li>
+            <li>Servicio/Producto 3</li>
+        </ul>
+    </section>
+
+    <section id="contactos" class="section">
+        <h1>Contactos</h1>
+        <div class="contact">
+            <img src="https://via.placeholder.com/50" alt="Foto de Contacto 1">
+            <p>Nombre: Contacto 1<br>Teléfono: 123-456-7890<br>Correo: contacto1@empresa.com</p>
+        </div>
+        <div class="contact">
+            <img src="https://via.placeholder.com/50" alt="Foto de Contacto 2">
+            <p>Nombre: Contacto 2<br>Teléfono: 123-456-7891<br>Correo: contacto2@empresa.com</p>
+        </div>
+        <!-- Puedes agregar más contactos de manera similar -->
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

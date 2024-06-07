@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ganadería Los Encinos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 80px 20px 20px; 
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .animated-img {
+            width: 100%;
+            border-radius: 5%;
+            height: 200px;
+            max-width: 200px;
+            margin: 0 auto;
+            transition: transform 0.5s;
+        }
+        .animated-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <ul><li><div class="logo"><a href="index.html">Ganadería Los Encinos</a></div></li></ul>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conócenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Servicios y Productos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+    <section class="section">
+        <h1>Historia de Ganadería Los Encinos</h1>
+            <p>En 1950, Victor Melgarejo, ingeniero agrónomo, decidió regresar a la finca de su familia en Yataity del Sur, Paraguay, para fundar Ganadería Los Encinos.<br>
+            Con 5000 hectáreas de terreno y un enfoque en la sostenibilidad y el bienestar animal, comenzó a criar ganado Angus y Hereford, conocido por su
+            excelente <br>calidad de carne.<br><br>
+
+            Junto a su amigo Gustavo Ortíz, quien introdujo la producción de leche y quesos artesanales, Los Encinos rápidamente se destacó por sus productos de alta calidad. 
+            <br>La finca también se convirtió en un centro educativo, ofreciendo visitas guiadas y talleres sobre ganadería sostenible.<br><br>
+    
+            Con el tiempo, Ganadería Los Encinos expandió su mercado a nivel internacional, obteniendo certificaciones en producción orgánica y bienestar animal.
+            <br>La empresa sigue siendo un modelo de cómo la tradición y la innovación pueden combinarse para crear un futuro más sostenible, manteniendo siempre<br> un fuerte
+            compromiso con la comunidad local y el medio ambiente.</p>
+    </section>
+    <section class="section">
+        <h1>Hoja de Vida</h1>
+        <li><strong>Fundación:</strong> 1950
+        <li><strong>Ubicación:</strong> Yataity del Sur, San Pedro, Paraguay
+        <li><strong>Propietario:</strong> Gustavo Ortíz y Victor Melgarejo
+        <li><strong>Área de Operación:</strong> 5000 hectáreas de tierras dedicadas a la ganadería en diferentes ciudades
+        <li><strong>Certificaciones:</strong> Certificación en Producción Orgánica, Certificación de Bienestar Animal
+        <li><strong>Principales Productos:</strong> Carne de res premium, leche fresca, quesos artesanales
+        <li><strong>Capacidad de Producción Anual:</strong>
+                 <ul> - <strong>Carne de res:</strong> 1000 toneladas</ul>
+                 <ul> - <strong>Leche:</strong> 1,2 millones de litros</ul>
+                 <ul> - <strong>Quesos:</strong> 50 toneladas </ul>
+        </li>
+            
+        <img src="leche.jpg" class="animated-img">
+        <img src="letch.jpg" class="animated-img">
+        <img src="quesos.jpg" class="animated-img">
+        <img src="carne de res.webp" class="animated-img">
+
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

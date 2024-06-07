@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ganadería Los Encinos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 80px 20px 20px; 
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .animated-img {
+            width: 100%;
+            border-radius: 5%;
+            height: 100px;
+            width: 100px;
+            margin: 0 auto;
+            transition: transform 0.5s;
+        }
+        .animated-img:hover {
+            transform: scale(1.05);
+        }
+        .animated-img2{
+            width: 100%;
+            border-radius: 5%;
+            height: 100px;
+            width: 200px;
+            margin: 0 auto;
+            transition: transform 0.5s;
+        }
+        .animated-img2:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <ul><li><div class="logo"><a href="index.html">Ganadería Los Encinos</a></div></li></ul>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conócenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Servicios y Productos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <section class="section"><h1>Servicios y Productos</h1></section>
+    <section class="section">    
+        <h4>Servicios</h4>
+        <p>Consultoría en Ganadería Sostenible</p>
+            <li>Asesoramiento sobre prácticas de manejo sostenible
+            <li>Implementación de sistemas de bienestar animal</li>
+                <ul>
+                    <img src="manjo sos.jpg" class="animated-img2">
+                    <img src="bien estar.png" class="animated-img2">
+                </ul>
+        <p>Visitas Guiadas y Experiencias Educativas</p>
+            <li>Tours por la finca para escuelas y grupos
+            <li>Talleres sobre cría de ganado y producción de lácteos</li>
+                <ul>
+                    <img src="tour finca.jpg" class="animated-img2">
+                    <img src="tour ganado.jpg" class="animated-img2">
+                </ul>
+        <p>Programas de Bienestar Animal</p>
+            <li>Seminarios sobre cuidado y manejo de ganado
+            <li>Servicios veterinarios y de nutrición para productores locales </li>
+                <ul>
+                    <img src="bienestar.jpg" class="animated-img2">
+                    <img src="bienestar2.png" class="animated-img2">
+                </ul>
+                
+           
+
+    </section>
+    <section class="section">
+        <h4>Productos</h4>
+        <p>Carne de Res Premium</p>
+            <li>Cortes frescos (bife de chorizo, lomo, entraña, etc.)
+            <li>Carne envasada al vacío
+            <li>Productos de carne procesada (hamburguesas, embutidos)</li>
+                <ul>
+                    <img src="carne envasada vacio.jpg" class="animated-img">  
+                    <img src="carne envasada vacio3.jpg" class="animated-img">
+                    <img src="bifechori.jpg" class="animated-img">
+                    <img src="entrañas.png" class="animated-img">
+                    <img src="carne hamburg.lpg.jpg" class="animated-img">
+                    <img src="embutidos.jpg" class="animated-img">
+                </ul>
+        <p>Leche Fresca</p>
+            <li>Leche entera
+            <li>Leche descremada
+            <li>Leche orgánica</li>
+                    <ul>
+                        <img src="leche entera.jpg" class="animated-img">
+                        <img src="leche descremada.jpg" class="animated-img">
+                        <img src="drink-7016918_1280.jpg" class="animated-img">
+                        <img src="leche3.jpg" class="animated-img">
+                        <img src="leche4.jpg" class="animated-img">
+                        <img src="leche6.jpg" class="animated-img">
+                    </ul>
+        <p>Quesos artesanales</p>
+            <li>Queso cheddar
+            <li>Queso gouda
+            <li>Queso azul
+            <li>Queso fresco</li>
+                    <ul>
+                        <img src="queso-gouda.jpg" class="animated-img">
+                        <img src="queso gouda ro.jpg" class="animated-img">
+                        <img src="queso chedar.jpg" class="animated-img">
+                        <img src="queso azul.jpg" class="animated-img">
+                        <img src="queso fresco.jpg" class="animated-img">
+                        <img src="quesos-frescos2.jpg" class="animated-img">
+                    </ul>
+    </section>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

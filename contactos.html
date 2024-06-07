@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ganadería Los Encinos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 80px 20px 20px; 
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .contact img {
+            border-radius: 50%;
+            width: 100px;
+            heidth: 100px;
+            margin-right: 10px;
+            transition: transform 0.3s;
+        }
+        .contact:hover img {
+            transform: scale(1.2);
+        }
+        .contact  a{
+            text-decoration: none;
+            color: #000000;
+            transition: color 0.3s;
+        }
+        .contact:hover  a{
+            color: #007BFF;
+        }
+      
+        
+  
+    </style>
+</head>
+<body>
+    <nav>
+      <ul><li><div class="logo"><a href="index.html">Ganadería Los Encinos</a></div></li></ul>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conócenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Servicios y Productos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Contactos</h1>
+        <div class="contact">
+            <img src="imgus.jpg" alt="Foto de Contacto 1">
+            <a href="https://www.instagram.com/manu.or7">
+            <p>Nombre: Gustavo Ortíz<br>
+            Teléfono: 0976-989550<br>
+            Instagram: manu.or7</p></a>
+        </div>
+        <div class="contact">
+            <img src="imgvic.jpg" alt="Foto de Contacto 2">
+            <a href="https://www.instagram.com/_vtms_">
+            <p>Nombre: Victor Melgarejo<br>
+            Teléfono: 0971-910302<br>
+            Instagram: _vtms_</a></p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

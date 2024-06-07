@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ganadería Los Encinos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 80px 20px 20px; 
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <ul><li><div class="logo"><a href="index.html">Ganadería Los Encinos</a></div></li></ul>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conócenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Servicios y Productos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+
+    <section class="section">
+        <h1>Síntesis de la Empresa</h1>
+        <p> Ganadería Los Encinos se dedica a la cría y producción de ganado bovino de alta calidad.
+            Nuestra empresa se especializa en la producción de carne de res,<br> leche y productos derivados, operando bajo los más altos
+            estándares de sostenibilidad y bienestar animal.<br> Nos comprometemos a ofrecer productos saludables y nutritivos, asegurando 
+            prácticas ganaderas responsables y respetuosas con el medio ambiente.</p>
+    </section>
+    <section class="section">
+        <h1>Agenda de la Empresa</h1>
+        <li><strong>Enero - Marzo</strong>
+            <ul>- Revisión y planificación anual de las actividades ganaderas.</ul>
+            <ul>- Implementación de programas de nutrición y salud animal.</ul>
+            <ul> - Inspección y mantenimiento de infraestructuras y equipos</ul>
+        
+        <li><strong>Abril - Junio</strong>
+            <ul>- Temporada de partos y manejo de terneros.</ul>
+            <ul>- Evaluación y mejora de pastizales.</ul>
+            <ul>- Comercialización de productos lácteos frescos.</ul>
+        
+        <li><strong>Julio - Septiembre</strong>
+            <ul>- Periodo de vacunación y chequeos veterinarios</ul>
+            <ul>- Participación en ferias y exposiciones ganaderas.</ul>
+            <ul>- Recolección y almacenamiento de forraje para el invierno.</ul>
+        
+        <li><strong>Octubre - Diciembre</strong>
+            <ul>- Evaluación anual de producción y bienestar animal.</ul>
+            <ul>- Venta de ganado para carne.</ul>
+            <ul>- Preparación de informes de sostenibilidad y planificación para el próximo año.</ul>
+        </li>
+    </section>
+    <section class="section">
+        <h1>Valores de la Empresa</h1>
+            <ol>- <strong>Calidad:</strong> Garantizamos productos de la más alta calidad mediante prácticas ganaderas avanzadas y controladas.</ol>
+            <ol>- <strong>Sostenibilidad:</strong> Nos comprometemos con la conservación del medio ambiente y el uso eficiente de recursos naturales.</ol>
+            <ol>- <strong>Bienestar Animal:</strong> Mantenemos altos estándares de bienestar para nuestros animales, asegurando su salud y confort.</ol>
+            <ol>- <strong>Innovación:</strong> Aplicamos tecnologías modernas y prácticas innovadoras para mejorar la producción y la gestión ganadera.</ol>
+            <ol>- <strong>Responsabilidad Social:</strong> Colaboramos con la comunidad local y apoyamos el desarrollo rural.</ol>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

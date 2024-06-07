@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ganadería Los Encinos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0; 
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+        .section {
+            padding: 80px 20px 20px; 
+            margin: 20px;
+            border: 1px solid #ddd;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .animated-img {
+            width: 100%;
+            border-radius: 5%;
+            height: 300px;
+            max-width: 300px;
+            margin: 0 auto;
+            
+            transition: transform 0.5s;
+        }
+        .animated-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+      <ul><li><div class="logo"><a href="index.html">Ganadería Los Encinos</a></div></li></ul>
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="conócenos.html">Conócenos</a></li>
+            <li><a href="productos.html">Servicios y Productos</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+        </ul>
+    </nav>
+  <center>
+     <section class="section">
+        <h1>Bienvenidos a Ganadería Los Encinos</h1>
+        <h4><strong>Somos una empresa dedicada a la cría y producción de ganado de alta calidad</strong></h4>
+        <img src="vaca.jpg" alt="Ganadería" class="animated-img">
+        <img src="vacagor.jpg" alt="Ganadería" class="animated-img">
+        <img src="ganaderiamenu07.jpg" alt="Ganadería" class="animated-img">
+     </section>
+  </center>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
